@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html
+  itemscope
+  itemtype="http://schema.org/Article"
+  xmlns:fb="http://www.facebook.com/2008/fbml"
+  xmlns:og="http://ogp.me/ns#"
+>
+  <head>
+    
+    <title>
+         BetaList
+    </title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon-618a2bdd0eda7c547f0488b2f97ebc773a50db4351f7ba222f8f1f864e301895.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      type="image/png"
+      href="/assets/touch-icon-precomposed-144-9ee9aefd01a1644faf757288455aa33fa0562c16fd8a9c82896d8a367943ab7e.png"
+      sizes="72x72 144x144"
+    />
+
+
+    <link
+      rel="alternate"
+      type="application/atom+xml"
+      title="Startups ATOM Feed"
+      href="http://feeds.feedburner.com/BetaList"
+    />
+    <script>
+      //<![CDATA[gbg
+      window.gon={};gon.algolia={"application_id":"4CQMTMMK73","api_key_search":"5defc918b05014c76cb000f5c9386c9b","indexes":{"startup":"Startup_production","region":"Region_production","market":"Market_production"}};gon.algolia_places={"app_id":"plAJPG43US25","api_key":"b847dda731800dd265fd43312f516371"};gon.stripe={"publishable_key":"pk_live_IBtZl4h2rb5702Be42W30vzR"};gon.google_analytics={"local_request":false,"id":"UA-575449-28"};gon.user_id=null;gon.signin_path="/users/auth/twitter";
+      //]]>
+    </script>
+    <script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/places.js/1/placesAutocompleteDataset.min.js"></script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script src="https://js.stripe.com/v2/"></script>
+    <script src="/packs/application-9f2ae20d9b6f7db739b6.js"></script>
+    <script src="/assets/application-6e97d8e6ce4edf57b462fc8b87dbc6af243fd7cbde599f63bbf27f179a252159.js"></script>
+    <link
+      rel="stylesheet"
+      media="screen, projection"
+      href="css/application-adc469c6e72c8d40252e9cf8a4b3ce896036097830f03490dab3.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen, projection"
+      href="css/fonts-b30f5afe980994903da2dc145a9bcaf1ded68fba264f1577a44a27aa38962179.css"
+    />
+  </head>
+
+
+
+
+
+  <body
+    class="startups"
+    data-admin-url="/admin/startups/submitted"
+    data-controller="modal"
+    data-no-turbolink
+    id="startups-index"
+  >
+  <!-- search bar -->
+    <div class="search-bar" style="display: none">
+      <div class="search-bar-poweredby">
+        <a
+          target="_blank"
+          href="http://www.algolia.com/?utm_source=betalist&amp;utm_medium=link&amp;utm_campaign=betalist_search"
+          >Search powered by
+          <div class="logo">Algolia</div>
+        </a>
+      </div>
+      <form action="/search" method="get">
+        <input
+          type="text"
+          name="q"
+          id="q"
+          class="js-search-bar-input"
+          placeholder="Search for startups, markets and regions"
+        />
+      </form>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="headerWrapper">
+      <div class="line"></div>
+      <div class="mobileNav" data-behavior="toggle-headNav">
+        <div class="betaburger">
+          <div class="betaburger__ingredients"></div>
+        </div>
+      </div>
+      <nav class="headerNav" data-headroom>
+        <ul class="headerNav__start">
+          <li
+            class="headerNav__link headerNav__link--logo"
+            data-behavior="navigation-essential"
+          >
+            <a href=""><div class="betaburger" data-behavior="betaburger">
+                <div class="betaburger__ingredients"></div>
+              </div>
+            </a>
+          </li>
+          <li class="headerNav__link"><a href="">Frontpage</a></li>
+          <li class="headerNav__link"><a href="/regions">Regions</a></li>
+          <li class="headerNav__link"><a href="/markets">Markets</a></li>
+          <li class="headerNav__link"><a href="/newsletter">Newsletter</a></li>
+          <li class="headerNav__link">
+            <a target="_blank" href="https://wip.co">Maker Community</a>
+          </li>
+          <li class="headerNav__link">
+            <a target="_blank" href="https://startup.jobs">Startup Jobs</a>
+          </li>
+          <li class="headerNav__link popover" data-behavior="popover">
+            <a data-behavior="popover-parent" href="#">•••</a>
+            <ul class="popover__child" data-behavior="popover-child">
+              <li class="popover__child__link"><a href="/faq">FAQ</a></li>
+              <li class="popover__child__link">
+                <a href="/advertise">Advertise</a>
+              </li>
+              <li class="popover__child__link">
+                <a href="https://marc.typeform.com/to/KOdlOu">API</a>
+              </li>
+              <li class="popover__child__link">
+                <a
+                  href="/cdn-cgi/l/email-protection#c7b3a2a6aa87a5a2b3a6abaeb4b3e9a4a8aa" 
+                  >Email us</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="headerNav__end">
+          <li class="headerNav__link headerNav__link--padded desktopOnly">
+            <input
+              class="expandableSearchField"
+              data-behavior="expandableSearchField"
+              placeholder="Search BetaList"
+              type="search"
+            />
+          </li>
+          <li class="headerNav__link mobileOnly">
+            <a href="/search">Search</a>
+          </li>
+          <li class="headerNav__link headerNav__link--button">
+            <a data-behavior="sign-in-link" href="/submit">Submit Startup</a>
+          </li>
+          <li class="headerNav__link headerNav__link--button">
+            <a target="_blank" href="https://startup.jobs/new">Post a Job</a>
+          </li>
+          <li class="headerNav__link headerNav__link--button">
+            <a
+              data-action="modal#open"
+              data-modal-id="signin"
+              href="/users/auth/twitter"
+              >Sign in</a
+            >
+          </li>
+          <li class="headerNav__link headerNav__link--button">
+            <a
+              data-action="modal#open"
+              data-modal-id="join"
+              href="/users/auth/twitter"
+              >Join</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div>
+        <section class="content-wrapper list-wrapper">
+            <div class="list content">
+              <div class="startupDeckHeader">
+                <strong> Trending Startups</strong>
+                <div class="viewToggle" data-behavior="toggleStartupDeckView">
+                  <div class="
+                      viewToggle__button
+                      viewToggle__button--grid
+                      viewToggle__button--active
+                    "
+                  ></div>
+                  <div class="viewToggle__button viewToggle__button--list"></div>
+                </div>
+              </div>
+              <div class="startupDeck">
+                <div class="startupCard" id="startup-83922">
+                  <a
+                    class="startupCard__visual"
+                    style="background-color:rebeccapurple"
+                    href="/startups/motor-admin"
+                    ><img
+                      srcset="
+                        https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=35567c83ab7b30e47f510c818784a98a 1x,
+                        https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=2&amp;s=a5ec48b05a7c415318325b498fb0039b 2x,
+                        https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=3&amp;s=7ba63be2001c4a2d8e30288c39fe3ce3 3x
+                      "
+                      class="startupCard__visual__image"
+                      src="https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=35567c83ab7b30e47f510c818784a98a"
+                    />
+                  </a>
+                  <div class="startupCard__details">
+                    <div class="startupCard__details__text">
+                      <a class="startupCard__details__name" href="/startups/motor-admin"
+                        >Motor Admin </a
+                      ><a class="startupCard__details__pitch" href="/startups/motor-admin"
+                        >Deploy a no-code admin panel for your application in less than a
+                        minute</a
+                      >
+                    </div>
+                    <div class="startupCard__meta">
+                      <div class="startupCard__meta__buttons">
+                        <div class="startupCard__meta__buttons__button">
+                          <a
+                            class="cuteButton cuteButton--upvote"
+                            data-behavior="toggable toggable-incrementable"
+                            data-toggable-incrementable="true"
+                            data-toggable-active="false"
+                            data-toggable-on-path="https://betalist.com/startups/motor-admin/follow"
+                            data-toggable-off-path="https://betalist.com/startups/motor-admin/unfollow"
+                            href="#"
+                            ><div
+                              class="cuteButton__score"
+                              data-behavior="toggable-counter"
+                            >
+                              6
+                            </div>
+                            <div class="cuteButton__icon">&nbsp;</div>
+                          </a>
+                        </div>
+                        <div class="startupCard__meta__buttons__button">
+                          <a class="cuteButton" href="/startups/motor-admin#comments"
+                            ><div class="cuteButton__icon">&nbsp;</div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="startupCard__meta__makers startupCard__meta__makers--1">
+                        <a
+                          class="startupCard__meta__makers__maker"
+                          style="background-image: url(&#39;https://betalist.imgix.net/user/119880/avatar/ebfaa62a97353b505e3cea79500a1c32.jpg?ixlib=rb-4.0.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&amp;s=4d727378c4b2113dac40a8cbacea0425&#39;)"
+                          href="/@getmotor"
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="startupCard" id="startup-83922">
+                    <a
+                      class="startupCard__visual"
+                      style="background-color: rebeccapurple;"
+                      href="/startups/motor-admin"
+                      ><img
+                        srcset="
+                          https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=35567c83ab7b30e47f510c818784a98a 1x,
+                          https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=2&amp;s=a5ec48b05a7c415318325b498fb0039b 2x,
+                          https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=3&amp;s=7ba63be2001c4a2d8e30288c39fe3ce3 3x
+                        "
+                        class="startupCard__visual__image"
+                        src="https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=35567c83ab7b30e47f510c818784a98a"
+                      />
+                    </a>
+                    <div class="startupCard__details">
+                      <div class="startupCard__details__text">
+                        <a class="startupCard__details__name" href="/startups/motor-admin"
+                          >Motor Admin </a
+                        ><a class="startupCard__details__pitch" href="/startups/motor-admin"
+                          >Deploy a no-code admin panel for your application in less than a
+                          minute</a
+                        >
+                      </div>
+                      <div class="startupCard__meta">
+                        <div class="startupCard__meta__buttons">
+                          <div class="startupCard__meta__buttons__button">
+                            <a
+                              class="cuteButton cuteButton--upvote"
+                              data-behavior="toggable toggable-incrementable"
+                              data-toggable-incrementable="true"
+                              data-toggable-active="false"
+                              data-toggable-on-path="https://betalist.com/startups/motor-admin/follow"
+                              data-toggable-off-path="https://betalist.com/startups/motor-admin/unfollow"
+                              href="#"
+                              ><div
+                                class="cuteButton__score"
+                                data-behavior="toggable-counter"
+                              >
+                                6
+                              </div>
+                              <div class="cuteButton__icon">&nbsp;</div>
+                            </a>
+                          </div>
+                          <div class="startupCard__meta__buttons__button">
+                            <a class="cuteButton" href="/startups/motor-admin#comments"
+                              ><div class="cuteButton__icon">&nbsp;</div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="startupCard__meta__makers startupCard__meta__makers--1">
+                          <a
+                            class="startupCard__meta__makers__maker"
+                            style="background-image: url(&#39;https://betalist.imgix.net/user/119880/avatar/ebfaa62a97353b505e3cea79500a1c32.jpg?ixlib=rb-4.0.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&amp;s=4d727378c4b2113dac40a8cbacea0425&#39;)"
+                            href="/@getmotor"
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="startupCard" id="startup-83922">
+                    <a
+                      class="startupCard__visual"
+                      style="background-color: rebeccapurple;"
+                      href="/startups/motor-admin"
+                      ><img
+                        srcset="
+                          https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=35567c83ab7b30e47f510c818784a98a 1x,
+                          https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=2&amp;s=a5ec48b05a7c415318325b498fb0039b 2x,
+                          https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=3&amp;s=7ba63be2001c4a2d8e30288c39fe3ce3 3x
+                        "
+                        class="startupCard__visual__image"
+                        src="https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=35567c83ab7b30e47f510c818784a98a"
+                      />
+                    </a>
+                    <div class="startupCard__details">
+                      <div class="startupCard__details__text">
+                        <a class="startupCard__details__name" href="/startups/motor-admin"
+                          >Motor Admin </a
+                        ><a class="startupCard__details__pitch" href="/startups/motor-admin"
+                          >Deploy a no-code admin panel for your application in less than a
+                          minute</a
+                        >
+                      </div>
+                      <div class="startupCard__meta">
+                        <div class="startupCard__meta__buttons">
+                          <div class="startupCard__meta__buttons__button">
+                            <a
+                              class="cuteButton cuteButton--upvote"
+                              data-behavior="toggable toggable-incrementable"
+                              data-toggable-incrementable="true"
+                              data-toggable-active="false"
+                              data-toggable-on-path="https://betalist.com/startups/motor-admin/follow"
+                              data-toggable-off-path="https://betalist.com/startups/motor-admin/unfollow"
+                              href="#"
+                              ><div
+                                class="cuteButton__score"
+                                data-behavior="toggable-counter"
+                              >
+                                6
+                              </div>
+                              <div class="cuteButton__icon">&nbsp;</div>
+                            </a>
+                          </div>
+                          <div class="startupCard__meta__buttons__button">
+                            <a class="cuteButton" href="/startups/motor-admin#comments"
+                              ><div class="cuteButton__icon">&nbsp;</div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="startupCard__meta__makers startupCard__meta__makers--1">
+                          <a
+                            class="startupCard__meta__makers__maker"
+                            style="background-image: url(&#39;https://betalist.imgix.net/user/119880/avatar/ebfaa62a97353b505e3cea79500a1c32.jpg?ixlib=rb-4.0.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&amp;s=4d727378c4b2113dac40a8cbacea0425&#39;)"
+                            href="/@getmotor"
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="startupCard" id="startup-83922">
+                    <a
+                      class="startupCard__visual"
+                      style="background-color: rebeccapurple;"
+                      href="/startups/motor-admin"
+                      ><img
+                        srcset="
+                          https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=35567c83ab7b30e47f510c818784a98a 1x,
+                          https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=2&amp;s=a5ec48b05a7c415318325b498fb0039b 2x,
+                          https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=3&amp;s=7ba63be2001c4a2d8e30288c39fe3ce3 3x
+                        "
+                        class="startupCard__visual__image"
+                        src="https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=35567c83ab7b30e47f510c818784a98a"
+                      />
+                    </a>
+                    <div class="startupCard__details">
+                      <div class="startupCard__details__text">
+                        <a class="startupCard__details__name" href="/startups/motor-admin"
+                          >Motor Admin </a
+                        ><a class="startupCard__details__pitch" href="/startups/motor-admin"
+                          >Deploy a no-code admin panel for your application in less than a
+                          minute</a
+                        >
+                      </div>
+                      <div class="startupCard__meta">
+                        <div class="startupCard__meta__buttons">
+                          <div class="startupCard__meta__buttons__button">
+                            <a
+                              class="cuteButton cuteButton--upvote"
+                              data-behavior="toggable toggable-incrementable"
+                              data-toggable-incrementable="true"
+                              data-toggable-active="false"
+                              data-toggable-on-path="https://betalist.com/startups/motor-admin/follow"
+                              data-toggable-off-path="https://betalist.com/startups/motor-admin/unfollow"
+                              href="#"
+                              ><div
+                                class="cuteButton__score"
+                                data-behavior="toggable-counter"
+                              >
+                                6
+                              </div>
+                              <div class="cuteButton__icon">&nbsp;</div>
+                            </a>
+                          </div>
+                          <div class="startupCard__meta__buttons__button">
+                            <a class="cuteButton" href="/startups/motor-admin#comments"
+                              ><div class="cuteButton__icon">&nbsp;</div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="startupCard__meta__makers startupCard__meta__makers--1">
+                          <a
+                            class="startupCard__meta__makers__maker"
+                            style="background-image: url(&#39;https://betalist.imgix.net/user/119880/avatar/ebfaa62a97353b505e3cea79500a1c32.jpg?ixlib=rb-4.0.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&amp;s=4d727378c4b2113dac40a8cbacea0425&#39;)"
+                            href="/@getmotor"
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class='startupDeckHeader'>
+                  <strong>Wednesday</strong> December 8th
+                </div>
+              <div class="startupDeck">
+                <div class="startupCard" id="startup-83922">
+                  <a
+                    class="startupCard__visual"
+                    style="background-color:rebeccapurple"
+                    href="/startups/motor-admin"
+                    ><img
+                      srcset="
+                        https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=35567c83ab7b30e47f510c818784a98a 1x,
+                        https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=2&amp;s=a5ec48b05a7c415318325b498fb0039b 2x,
+                        https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=3&amp;s=7ba63be2001c4a2d8e30288c39fe3ce3 3x
+                      "
+                      class="startupCard__visual__image"
+                      src="https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=35567c83ab7b30e47f510c818784a98a"
+                    />
+                  </a>
+                  <div class="startupCard__details">
+                    <div class="startupCard__details__text">
+                      <a class="startupCard__details__name" href="/startups/motor-admin"
+                        >Motor Admin </a
+                      ><a class="startupCard__details__pitch" href="/startups/motor-admin"
+                        >Deploy a no-code admin panel for your application in less than a
+                        minute</a
+                      >
+                    </div>
+                    <div class="startupCard__meta">
+                      <div class="startupCard__meta__buttons">
+                        <div class="startupCard__meta__buttons__button">
+                          <a
+                            class="cuteButton cuteButton--upvote"
+                            data-behavior="toggable toggable-incrementable"
+                            data-toggable-incrementable="true"
+                            data-toggable-active="false"
+                            data-toggable-on-path="https://betalist.com/startups/motor-admin/follow"
+                            data-toggable-off-path="https://betalist.com/startups/motor-admin/unfollow"
+                            href="#"
+                            ><div
+                              class="cuteButton__score"
+                              data-behavior="toggable-counter"
+                            >
+                              6
+                            </div>
+                            <div class="cuteButton__icon">&nbsp;</div>
+                          </a>
+                        </div>
+                        <div class="startupCard__meta__buttons__button">
+                          <a class="cuteButton" href="/startups/motor-admin#comments"
+                            ><div class="cuteButton__icon">&nbsp;</div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="startupCard__meta__makers startupCard__meta__makers--1">
+                        <a
+                          class="startupCard__meta__makers__maker"
+                          style="background-image: url(&#39;https://betalist.imgix.net/user/119880/avatar/ebfaa62a97353b505e3cea79500a1c32.jpg?ixlib=rb-4.0.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&amp;s=4d727378c4b2113dac40a8cbacea0425&#39;)"
+                          href="/@getmotor"
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="startupCard" id="startup-83922">
+                    <a
+                      class="startupCard__visual"
+                      style="background-color: rebeccapurple;"
+                      href="/startups/motor-admin"
+                      ><img
+                        srcset="
+                          https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=35567c83ab7b30e47f510c818784a98a 1x,
+                          https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=2&amp;s=a5ec48b05a7c415318325b498fb0039b 2x,
+                          https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=3&amp;s=7ba63be2001c4a2d8e30288c39fe3ce3 3x
+                        "
+                        class="startupCard__visual__image"
+                        src="https://betalist.imgix.net/attachment/162235/image/e3e425068831cd0a1a5aeea76d2221d8.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=35567c83ab7b30e47f510c818784a98a"
+                      />
+                    </a>
+                    <div class="startupCard__details">
+                      <div class="startupCard__details__text">
+                        <a class="startupCard__details__name" href="/startups/motor-admin"
+                          >Motor Admin </a
+                        ><a class="startupCard__details__pitch" href="/startups/motor-admin"
+                          >Deploy a no-code admin panel for your application in less than a
+                          minute</a
+                        >
+                      </div>
+                      <div class="startupCard__meta">
+                        <div class="startupCard__meta__buttons">
+                          <div class="startupCard__meta__buttons__button">
+                            <a
+                              class="cuteButton cuteButton--upvote"
+                              data-behavior="toggable toggable-incrementable"
+                              data-toggable-incrementable="true"
+                              data-toggable-active="false"
+                              data-toggable-on-path="https://betalist.com/startups/motor-admin/follow"
+                              data-toggable-off-path="https://betalist.com/startups/motor-admin/unfollow"
+                              href="#"
+                              ><div
+                                class="cuteButton__score"
+                                data-behavior="toggable-counter"
+                              >
+                                6
+                              </div>
+                              <div class="cuteButton__icon">&nbsp;</div>
+                            </a>
+                          </div>
+                          <div class="startupCard__meta__buttons__button">
+                            <a class="cuteButton" href="/startups/motor-admin#comments"
+                              ><div class="cuteButton__icon">&nbsp;</div>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="startupCard__meta__makers startupCard__meta__makers--1">
+                          <a
+                            class="startupCard__meta__makers__maker"
+                            style="background-image: url(&#39;https://betalist.imgix.net/user/119880/avatar/ebfaa62a97353b505e3cea79500a1c32.jpg?ixlib=rb-4.0.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&amp;s=4d727378c4b2113dac40a8cbacea0425&#39;)"
+                            href="/@getmotor"
+                          ></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+              </div>
+            </div>
+          </section>
+          
+    </div>
+  </body>
+</html>
