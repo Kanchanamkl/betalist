@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html
+  itemscope
+  itemtype="http://schema.org/Article"
+  xmlns:fb="http://www.facebook.com/2008/fbml"
+  xmlns:og="http://ogp.me/ns#"
+>
+  <head>
+
+
+    <title>
+     BetaList
+    </title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon-618a2bdd0eda7c547f0488b2f97ebc773a50db4351f7ba222f8f1f864e301895.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      type="image/png"
+      href="/assets/touch-icon-precomposed-144-9ee9aefd01a1644faf757288455aa33fa0562c16fd8a9c82896d8a367943ab7e.png"
+      sizes="72x72 144x144"
+    />
+
+
+    <link
+      rel="alternate"
+      type="application/atom+xml"
+      title="Startups ATOM Feed"
+      href="http://feeds.feedburner.com/BetaList"
+    />
+    <script>
+      
+      window.gon = {};
+      gon.algolia = {
+        application_id: "4CQMTMMK73",
+        api_key_search: "5defc918b05014c76cb000f5c9386c9b",
+        indexes: {
+          startup: "Startup_production",
+          region: "Region_production",
+          market: "Market_production",
+        },
+      };
+      gon.algolia_places = {
+        app_id: "plAJPG43US25",
+        api_key: "b847dda731800dd265fd43312f516371",
+      };
+      gon.stripe = { publishable_key: "pk_live_IBtZl4h2rb5702Be42W30vzR" };
+      gon.google_analytics = { local_request: false, id: "UA-575449-28" };
+      gon.user_id = null;
+      gon.signin_path = "/users/auth/twitter";
+      //]]>
+    </script>
+
+    <link
+      rel="stylesheet"
+      media="screen, projection"
+      href="./1stPageStyle1.css"
+    />
+    
+  </head>
+  <body
+    class="startups"
+    data-admin-url="/admin/startups/submitted"
+    data-controller="modal"
+    data-no-turbolink
+    id="startups-index"
+  >
+    <div class="search-bar" style="display: none">
+      <div class="search-bar-poweredby">
+        <a
+          target="_blank"
+          href="http://www.algolia.com/?utm_source=betalist&amp;utm_medium=link&amp;utm_campaign=betalist_search"
+          >Search powered by
+          <div class="logo">Algolia</div>
+        </a>
+      </div>
+      <form action="/search" method="get">
+        <input
+          type="text"
+          name="q"
+          id="q"
+          class="js-search-bar-input"
+          placeholder="Search for startups, markets and regions"
+        />
+      </form>
+    </div>
+    <div class="headerWrapper">
+      <div class="line"></div>
+      <div class="mobileNav" data-behavior="toggle-headNav">
+        <div class="betaburger">
+          <div class="betaburger__ingredients"></div>
+        </div>
+      </div>
+      <nav class="headerNav" data-headroom>
+        <ul class="headerNav__start">
+          <li
+            class="headerNav__link headerNav__link--logo"
+            data-behavior="navigation-essential"
+          >
+            <a href="/"
+              ><div class="betaburger" data-behavior="betaburger">
+                <div class="betaburger__ingredients"></div>
+              </div>
+            </a>
+          </li>
+          <li class="headerNav__link"><a href="/">Frontpage</a></li>
+          <li class="headerNav__link"><a href="./2ndPage\2ndpage.html">Regions</a></li>
+          <li class="headerNav__link"><a href="/markets">Markets</a></li>
+          
+          
+       
+          <li class="headerNav__link popover" data-behavior="popover">
+          
+            <ul class="popover__child" data-behavior="popover-child">
+              <li class="popover__child__link"><a href="/faq">FAQ</a></li>
+              <li class="popover__child__link">
+                <a href="/advertise">Advertise</a>
+              </li>
+              <li class="popover__child__link">
+                <a href="https://marc.typeform.com/to/KOdlOu">API</a>
+              </li>
+              <li class="popover__child__link">
+                <a
+                  href="/cdn-cgi/l/email-protection#1a6e7f7b775a787f6e7b7673696e34797577"
+                  >Email us</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="headerNav__end">
+          <li class="headerNav__link headerNav__link--padded desktopOnly">
+            <input
+              class="expandableSearchField"
+              data-behavior="expandableSearchField"
+              placeholder="Search BetaList"
+              type="search"
+            />
+          </li>
+          <li class="headerNav__link mobileOnly">
+            <a href="/search">Search</a>
+          </li>
+          <li class="headerNav__link headerNav__link--button">
+            <a data-behavior="sign-in-link" href="/submit">Submit Startup</a>
+          </li>
+          <li class="headerNav__link headerNav__link--button">
+            <a target="_blank" href="https://startup.jobs/new">Post a Job</a>
+          </li>
+          <li class="headerNav__link headerNav__link--button">
+            <a
+              data-action="modal#open"
+              data-modal-id="signin"
+              
+              >Sign in</a
+            >
+          </li>
+          <li class="headerNav__link headerNav__link--button">
+            <a
+              data-action="modal#open"
+              data-modal-id="join"
+          
+              >Join</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+    
+    <section class="content-wrapper list-wrapper">
+      <div class="list content">
+        <div class="startupDeckHeader">
+          <strong>Trending Startups</strong>
+          <div class="viewToggle" data-behavior="toggleStartupDeckView">
+            <div
+              class="
+                viewToggle__button
+                viewToggle__button--grid
+                viewToggle__button--active
+              "
+            ></div>
+            <div class="viewToggle__button viewToggle__button--list"></div>
+          </div>
+        </div>
+        <div class="startupDeck">
+          <div class="startupCard" id="startup-84265">
+            <a
+              class="startupCard__visual"
+              style="background-color: "
+              href="/startups/videodeck"
+              ><img
+                srcset="
+                  https://betalist.imgix.net/attachment/163197/image/50855780c23fcb73faf83e71fe6d155f.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=930feae9d780ce4a8b2d66b3e59d968a 1x,
+                  https://betalist.imgix.net/attachment/163197/image/50855780c23fcb73faf83e71fe6d155f.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=2&amp;s=bb019d5cf0bed7fcf58ae2c226c94847 2x,
+                  https://betalist.imgix.net/attachment/163197/image/50855780c23fcb73faf83e71fe6d155f.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=3&amp;s=d2702b1eba80dbef9e56224d8b17cb43 3x
+                "
+                class="startupCard__visual__image"
+                src="https://betalist.imgix.net/attachment/163197/image/50855780c23fcb73faf83e71fe6d155f.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=930feae9d780ce4a8b2d66b3e59d968a"
+              />
+            </a>
+            <div class="startupCard__details">
+              <div class="startupCard__details__text">
+                <a class="startupCard__details__name" href="/startups/videodeck"
+                  >Videodeck </a
+                ><a
+                  class="startupCard__details__pitch"
+                  href="/startups/videodeck"
+                  >We turn your written content into a videos</a
+                >
+              </div>
+              <div class="startupCard__meta">
+                <div class="startupCard__meta__buttons">
+                  <div class="startupCard__meta__buttons__button">
+                    <a
+                      class="cuteButton cuteButton--upvote"
+                      data-behavior="toggable toggable-incrementable"
+                      data-toggable-incrementable="true"
+                      data-toggable-active="false"
+                      data-toggable-on-path="https://betalist.com/startups/videodeck/follow"
+                      data-toggable-off-path="https://betalist.com/startups/videodeck/unfollow"
+                      href="#"
+                      ><div
+                        class="cuteButton__score"
+                        data-behavior="toggable-counter"
+                      >
+                        1
+                      </div>
+                      <div class="cuteButton__icon">&nbsp;</div>
+                    </a>
+                  </div>
+                  <div class="startupCard__meta__buttons__button">
+                    <a class="cuteButton" href="/startups/videodeck#comments"
+                      ><div class="cuteButton__icon">&nbsp;</div>
+                    </a>
+                  </div>
+                </div>
+                <div
+                  class="startupCard__meta__makers startupCard__meta__makers--1"
+                >
+                  <a
+                    class="startupCard__meta__makers__maker"
+                    style="
+                      background-image: url(&#39;https://betalist.imgix.net/defaults/user/avatar?ixlib=rails-4.2.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&#39;);
+                    "
+                    href="http://twitter.com/andreijluca"
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="startupCard" id="startup-84246">
+            <a
+              class="startupCard__visual"
+              style="background-color: "
+              href="/startups/luckynote"
+              ><img
+                srcset="
+                  https://betalist.imgix.net/attachment/163135/image/cc2d7f17284da638523c2441be95d0e9.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=6e70f85225c624b115859f942c175ca2 1x,
+                  https://betalist.imgix.net/attachment/163135/image/cc2d7f17284da638523c2441be95d0e9.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=2&amp;s=540bb5e1317b507f292a3cd201454330 2x,
+                  https://betalist.imgix.net/attachment/163135/image/cc2d7f17284da638523c2441be95d0e9.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=3&amp;s=15dd6dd9f69298181202b58cd0793498 3x
+                "
+                class="startupCard__visual__image"
+                src="https://betalist.imgix.net/attachment/163135/image/cc2d7f17284da638523c2441be95d0e9.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=6e70f85225c624b115859f942c175ca2"
+              />
+            </a>
+            <div class="startupCard__details">
+              <div class="startupCard__details__text">
+                <a class="startupCard__details__name" href="/startups/luckynote"
+                  >Luckynote </a
+                ><a
+                  class="startupCard__details__pitch"
+                  href="/startups/luckynote"
+                  >Message yourself Notes, Files, Bookmarks and Tasks</a
+                >
+              </div>
+              <div class="startupCard__meta">
+                <div class="startupCard__meta__buttons">
+                  <div class="startupCard__meta__buttons__button">
+                    <a
+                      class="cuteButton cuteButton--upvote"
+                      data-behavior="toggable toggable-incrementable"
+                      data-toggable-incrementable="true"
+                      data-toggable-active="false"
+                      data-toggable-on-path="https://betalist.com/startups/luckynote/follow"
+                      data-toggable-off-path="https://betalist.com/startups/luckynote/unfollow"
+                      href="#"
+                      ><div
+                        class="cuteButton__score"
+                        data-behavior="toggable-counter"
+                      >
+                        3
+                      </div>
+                      <div class="cuteButton__icon">&nbsp;</div>
+                    </a>
+                  </div>
+                  <div class="startupCard__meta__buttons__button">
+                    <a class="cuteButton" href="/startups/luckynote#comments"
+                      ><div class="cuteButton__icon">&nbsp;</div>
+                    </a>
+                  </div>
+                </div>
+                <div
+                  class="startupCard__meta__makers startupCard__meta__makers--1"
+                >
+                  <a
+                    class="startupCard__meta__makers__maker"
+                    style="
+                      background-image: url(&#39;https://betalist.imgix.net/user/120361/avatar/5df6b49b79dfe6de97de6040385be7c3.png?ixlib=rb-4.0.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&amp;s=d61ff03450e1f6ec366d69ce598ed790&#39;);
+                    "
+                    href="/@LuckynoteHQ"
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="startupCard" id="startup-84409">
+            <a
+              class="startupCard__visual"
+              style="background-color: "
+              href="/startups/supercode"
+              ><img
+                srcset="
+                  https://betalist.imgix.net/attachment/163633/image/71fe383d206e3671c9ccbd44c02243f0.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=63e9602ff70a5429b2b9ce2e754ff7e4 1x,
+                  https://betalist.imgix.net/attachment/163633/image/71fe383d206e3671c9ccbd44c02243f0.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=2&amp;s=6b022d90698c41acf4db795ee21758b2 2x,
+                  https://betalist.imgix.net/attachment/163633/image/71fe383d206e3671c9ccbd44c02243f0.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=3&amp;s=c9665e884ccf233b6dae1f03e965f66e 3x
+                "
+                class="startupCard__visual__image"
+                src="https://betalist.imgix.net/attachment/163633/image/71fe383d206e3671c9ccbd44c02243f0.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=63e9602ff70a5429b2b9ce2e754ff7e4"
+              />
+            </a>
+            <div class="startupCard__details">
+              <div class="startupCard__details__text">
+                <a class="startupCard__details__name" href="/startups/supercode"
+                  >Supercode </a
+                ><a
+                  class="startupCard__details__pitch"
+                  href="/startups/supercode"
+                  >The Best QR Code Generator</a
+                >
+              </div>
+              <div class="startupCard__meta">
+                <div class="startupCard__meta__buttons">
+                  <div class="startupCard__meta__buttons__button">
+                    <a
+                      class="cuteButton cuteButton--upvote"
+                      data-behavior="toggable toggable-incrementable"
+                      data-toggable-incrementable="true"
+                      data-toggable-active="false"
+                      data-toggable-on-path="https://betalist.com/startups/supercode/follow"
+                      data-toggable-off-path="https://betalist.com/startups/supercode/unfollow"
+                      href="#"
+                      ><div
+                        class="cuteButton__score"
+                        data-behavior="toggable-counter"
+                      >
+                        1
+                      </div>
+                      <div class="cuteButton__icon">&nbsp;</div>
+                    </a>
+                  </div>
+                  <div class="startupCard__meta__buttons__button">
+                    <a class="cuteButton" href="/startups/supercode#comments"
+                      ><div class="cuteButton__icon">&nbsp;</div>
+                    </a>
+                  </div>
+                </div>
+                <div
+                  class="startupCard__meta__makers startupCard__meta__makers--2"
+                >
+                  <a
+                    class="startupCard__meta__makers__maker"
+                    style="
+                      background-image: url(&#39;https://betalist.imgix.net/defaults/user/avatar?ixlib=rails-4.2.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&#39;);
+                    "
+                    href="http://twitter.com/supersofia__"
+                  ></a>
+                  <a
+                    class="startupCard__meta__makers__maker"
+                    style="
+                      background-image: url(&#39;https://betalist.imgix.net/user/84633/avatar/1765e9da59d1cabf11c06db4d65fb29d.jpg?ixlib=rb-4.0.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&amp;s=53aee18527fdeed5710025651c9f7950&#39;);
+                    "
+                    href="/@DmitryAksenov"
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="startupCard startupCard--sponsor">
+            <a
+              class="startupCard__visual"
+              rel="nofollow"
+              data-turbolinks="false"
+              href="https://betalist.com/promotions/c41837d6-e5b9-41e3-829a-9ab4403afb3f/visit?slot=startups%23index"
+              ><img
+                srcset="
+                  https://betalist.imgix.net/promotion/155/image/945689d13df232e172e8a7d16d6e1a8b.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=crop&amp;auto=format&amp;dpr=1&amp;s=ef4a079c4894c04822afc464c274ef2e 1x,
+                  https://betalist.imgix.net/promotion/155/image/945689d13df232e172e8a7d16d6e1a8b.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=crop&amp;auto=format&amp;dpr=2&amp;s=0a7b0847e1c1fff1d4f7cf2889aeb04c 2x,
+                  https://betalist.imgix.net/promotion/155/image/945689d13df232e172e8a7d16d6e1a8b.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=crop&amp;auto=format&amp;dpr=3&amp;s=fb8fa773811d321aa57ee17edeb5fbc5 3x
+                "
+                class="startupCard__visual__image"
+                src="https://betalist.imgix.net/promotion/155/image/945689d13df232e172e8a7d16d6e1a8b.png?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=crop&amp;auto=format&amp;dpr=1&amp;s=ef4a079c4894c04822afc464c274ef2e"
+              />
+            </a>
+            <div class="startupCard__details">
+              <div class="startupCard__details__text">
+                <a
+                  class="startupCard__details__name"
+                  href="https://betalist.com/promotions/c41837d6-e5b9-41e3-829a-9ab4403afb3f/visit?slot=startups%23index"
+                  rel="nofollow"
+                  title="Trevor.io"
+                  >Trevor.io</a
+                >
+                <a
+                  class="startupCard__details__pitch"
+                  href="https://betalist.com/promotions/c41837d6-e5b9-41e3-829a-9ab4403afb3f/visit?slot=startups%23index"
+                  rel="nofollow"
+                  title="Trevor.io"
+                  >Empower your whole team to get answers from your data</a
+                >
+              </div>
+              <div class="startupCard__meta">
+                <a
+                  class="startupCard__meta__sponsor"
+                  href="/advertise"
+                  title="Promote your startup"
+                >
+                  Promoted
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <div class="infinite-startups">
+      <section class="content-wrapper list-wrapper">
+        <div class="list content">
+          <div class="startups">
+            <div class="startupDeckHeader">
+              <strong>Today</strong> December 23rd
+            </div>
+            <div class="startupDeck">
+              <div class="startupCard" id="startup-83148">
+                <a
+                  class="startupCard__visual"
+                  style="background-color: "
+                  href="/startups/reroas"
+                  ><img
+                    srcset="
+                      https://betalist.imgix.net/attachment/164786/image/5f5ddfbdeb80194581b8ff9524ac7b4a.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=4d8f6d64c94b5186e2ce4e5525131a9b 1x,
+                      https://betalist.imgix.net/attachment/164786/image/5f5ddfbdeb80194581b8ff9524ac7b4a.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=2&amp;s=15fd7c591a71b6090a07fb407d8ebe3a 2x,
+                      https://betalist.imgix.net/attachment/164786/image/5f5ddfbdeb80194581b8ff9524ac7b4a.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=3&amp;s=168e5535fcb6dfbb4787703579fe75c3 3x
+                    "
+                    class="startupCard__visual__image"
+                    src="https://betalist.imgix.net/attachment/164786/image/5f5ddfbdeb80194581b8ff9524ac7b4a.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=4d8f6d64c94b5186e2ce4e5525131a9b"
+                  />
+                </a>
+                <div class="startupCard__details">
+                  <div class="startupCard__details__text">
+                    <a
+                      class="startupCard__details__name"
+                      href="/startups/reroas"
+                      >Reroas </a
+                    ><a
+                      class="startupCard__details__pitch"
+                      href="/startups/reroas"
+                      >Retargeting Ads with AI audiences and scaling</a
+                    >
+                  </div>
+                  <div class="startupCard__meta">
+                    <div class="startupCard__meta__buttons">
+                      <div class="startupCard__meta__buttons__button">
+                        <a
+                          class="cuteButton cuteButton--upvote"
+                          data-behavior="toggable toggable-incrementable"
+                          data-toggable-incrementable="true"
+                          data-toggable-active="false"
+                          data-toggable-on-path="https://betalist.com/startups/reroas/follow"
+                          data-toggable-off-path="https://betalist.com/startups/reroas/unfollow"
+                          href="#"
+                          ><div
+                            class="cuteButton__score"
+                            data-behavior="toggable-counter"
+                          ></div>
+                          <div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                      <div class="startupCard__meta__buttons__button">
+                        <a class="cuteButton" href="/startups/reroas#comments"
+                          ><div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="
+                        startupCard__meta__makers startupCard__meta__makers--1
+                      "
+                    >
+                      <a
+                        class="startupCard__meta__makers__maker"
+                        style="
+                          background-image: url(&#39;https://betalist.imgix.net/user/118755/avatar/ee2553f6a31aa84aa1000589a36acb0b.png?ixlib=rb-4.0.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&amp;s=e0e1efa427cc42ebcabb9c3b3bee9089&#39;);
+                        "
+                        href="/@slowraar"
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="startupCard" id="startup-83143">
+                <a
+                  class="startupCard__visual"
+                  style="background-color: "
+                  href="/startups/bzaar"
+                  ><img
+                    srcset="
+                      https://betalist.imgix.net/attachment/164785/image/6636a6b30da2caf945e808722cc21e71.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=8a5ddf75cfebb2f24e77e2a01f48df8e 1x,
+                      https://betalist.imgix.net/attachment/164785/image/6636a6b30da2caf945e808722cc21e71.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=2&amp;s=0040d571fa982a28fed26055aaf2e45c 2x,
+                      https://betalist.imgix.net/attachment/164785/image/6636a6b30da2caf945e808722cc21e71.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=3&amp;s=4517a9d4f9c70f9cd1c88c0222234900 3x
+                    "
+                    class="startupCard__visual__image"
+                    src="https://betalist.imgix.net/attachment/164785/image/6636a6b30da2caf945e808722cc21e71.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=8a5ddf75cfebb2f24e77e2a01f48df8e"
+                  />
+                </a>
+                <div class="startupCard__details">
+                  <div class="startupCard__details__text">
+                    <a class="startupCard__details__name" href="/startups/bzaar"
+                      >Bzaar </a
+                    ><a
+                      class="startupCard__details__pitch"
+                      href="/startups/bzaar"
+                      >B2B Cross-border Marketplace</a
+                    >
+                  </div>
+                  <div class="startupCard__meta">
+                    <div class="startupCard__meta__buttons">
+                      <div class="startupCard__meta__buttons__button">
+                        <a
+                          class="cuteButton cuteButton--upvote"
+                          data-behavior="toggable toggable-incrementable"
+                          data-toggable-incrementable="true"
+                          data-toggable-active="false"
+                          data-toggable-on-path="https://betalist.com/startups/bzaar/follow"
+                          data-toggable-off-path="https://betalist.com/startups/bzaar/unfollow"
+                          href="#"
+                          ><div
+                            class="cuteButton__score"
+                            data-behavior="toggable-counter"
+                          ></div>
+                          <div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                      <div class="startupCard__meta__buttons__button">
+                        <a class="cuteButton" href="/startups/bzaar#comments"
+                          ><div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="
+                        startupCard__meta__makers startupCard__meta__makers--0
+                      "
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="startupCard" id="startup-83120">
+                <a
+                  class="startupCard__visual"
+                  style="background-color: "
+                  href="/startups/operance"
+                  ><img
+                    srcset="
+                      https://betalist.imgix.net/attachment/164782/image/d873d6acf6ff033f33a927d36a6fd83f.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=018895297b98f0e110fb0f0743f2d5ea 1x,
+                      https://betalist.imgix.net/attachment/164782/image/d873d6acf6ff033f33a927d36a6fd83f.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=2&amp;s=b2fa52d5e82ad9e6b1ca7d6712fbc026 2x,
+                      https://betalist.imgix.net/attachment/164782/image/d873d6acf6ff033f33a927d36a6fd83f.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=3&amp;s=5cdaca24b6e62117e2093863cb9efa9d 3x
+                    "
+                    class="startupCard__visual__image"
+                    src="https://betalist.imgix.net/attachment/164782/image/d873d6acf6ff033f33a927d36a6fd83f.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=018895297b98f0e110fb0f0743f2d5ea"
+                  />
+                </a>
+                <div class="startupCard__details">
+                  <div class="startupCard__details__text">
+                    <a
+                      class="startupCard__details__name"
+                      href="/startups/operance"
+                      >Operance </a
+                    ><a
+                      class="startupCard__details__pitch"
+                      href="/startups/operance"
+                      >A suite of tools to build your entire freelance
+                      business</a
+                    >
+                  </div>
+                  <div class="startupCard__meta">
+                    <div class="startupCard__meta__buttons">
+                      <div class="startupCard__meta__buttons__button">
+                        <a
+                          class="cuteButton cuteButton--upvote"
+                          data-behavior="toggable toggable-incrementable"
+                          data-toggable-incrementable="true"
+                          data-toggable-active="false"
+                          data-toggable-on-path="https://betalist.com/startups/operance/follow"
+                          data-toggable-off-path="https://betalist.com/startups/operance/unfollow"
+                          href="#"
+                          ><div
+                            class="cuteButton__score"
+                            data-behavior="toggable-counter"
+                          ></div>
+                          <div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                      <div class="startupCard__meta__buttons__button">
+                        <a class="cuteButton" href="/startups/operance#comments"
+                          ><div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="
+                        startupCard__meta__makers startupCard__meta__makers--1
+                      "
+                    >
+                      <a
+                        class="startupCard__meta__makers__maker"
+                        style="
+                          background-image: url(&#39;https://betalist.imgix.net/user/118656/avatar/68d613a39cdefa569962415492227d74.jpg?ixlib=rb-4.0.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&amp;s=104c3f20270a7b0877483d9e6034164a&#39;);
+                        "
+                        href="/@OperanceC"
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="startupCard" id="startup-80076">
+                <a
+                  class="startupCard__visual"
+                  style="background-color: "
+                  href="/startups/kariyo"
+                  ><img
+                    srcset="
+                      https://betalist.imgix.net/attachment/164784/image/360198721e0d059714bb1c3f250198d9.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=d6c120b245765c971418fb0085615efe 1x,
+                      https://betalist.imgix.net/attachment/164784/image/360198721e0d059714bb1c3f250198d9.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=2&amp;s=e08629937ebadda080ee079aa10679a0 2x,
+                      https://betalist.imgix.net/attachment/164784/image/360198721e0d059714bb1c3f250198d9.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=3&amp;s=098a3fa2d6081cd3997b66f88c9a89ab 3x
+                    "
+                    class="startupCard__visual__image"
+                    src="https://betalist.imgix.net/attachment/164784/image/360198721e0d059714bb1c3f250198d9.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=d6c120b245765c971418fb0085615efe"
+                  />
+                </a>
+                <div class="startupCard__details">
+                  <div class="startupCard__details__text">
+                    <a
+                      class="startupCard__details__name"
+                      href="/startups/kariyo"
+                      >Kariyo </a
+                    ><a
+                      class="startupCard__details__pitch"
+                      href="/startups/kariyo"
+                      >Deliver services to the comfort of your home</a
+                    >
+                  </div>
+                  <div class="startupCard__meta">
+                    <div class="startupCard__meta__buttons">
+                      <div class="startupCard__meta__buttons__button">
+                        <a
+                          class="cuteButton cuteButton--upvote"
+                          data-behavior="toggable toggable-incrementable"
+                          data-toggable-incrementable="true"
+                          data-toggable-active="false"
+                          data-toggable-on-path="https://betalist.com/startups/kariyo/follow"
+                          data-toggable-off-path="https://betalist.com/startups/kariyo/unfollow"
+                          href="#"
+                          ><div
+                            class="cuteButton__score"
+                            data-behavior="toggable-counter"
+                          ></div>
+                          <div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                      <div class="startupCard__meta__buttons__button">
+                        <a class="cuteButton" href="/startups/kariyo#comments"
+                          ><div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="
+                        startupCard__meta__makers startupCard__meta__makers--1
+                      "
+                    >
+                      <a
+                        class="startupCard__meta__makers__maker"
+                        style="
+                          background-image: url(&#39;https://betalist.imgix.net/defaults/user/avatar?ixlib=rails-4.2.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&#39;);
+                        "
+                        href="http://twitter.com/colum"
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="startupCard" id="startup-78163">
+                <a
+                  class="startupCard__visual"
+                  style="background-color: "
+                  href="/startups/pensieve"
+                  ><img
+                    srcset="
+                      https://betalist.imgix.net/attachment/164783/image/3f61977d2438e1b91d4a0241583e1286.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=51829566cd6301de6ab4dd27ec83e45f 1x,
+                      https://betalist.imgix.net/attachment/164783/image/3f61977d2438e1b91d4a0241583e1286.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=2&amp;s=ca83cccf856090a885dc9fe33c8ab3fa 2x,
+                      https://betalist.imgix.net/attachment/164783/image/3f61977d2438e1b91d4a0241583e1286.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=3&amp;s=a6f4d3603d8beba310bdd10f7edf7923 3x
+                    "
+                    class="startupCard__visual__image"
+                    src="https://betalist.imgix.net/attachment/164783/image/3f61977d2438e1b91d4a0241583e1286.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=51829566cd6301de6ab4dd27ec83e45f"
+                  />
+                </a>
+                <div class="startupCard__details">
+                  <div class="startupCard__details__text">
+                    <a
+                      class="startupCard__details__name"
+                      href="/startups/pensieve"
+                      >Pensieve </a
+                    ><a
+                      class="startupCard__details__pitch"
+                      href="/startups/pensieve"
+                      >A powerful research repository to help R&amp;D teams
+                      better collaborate</a
+                    >
+                  </div>
+                  <div class="startupCard__meta">
+                    <div class="startupCard__meta__buttons">
+                      <div class="startupCard__meta__buttons__button">
+                        <a
+                          class="cuteButton cuteButton--upvote"
+                          data-behavior="toggable toggable-incrementable"
+                          data-toggable-incrementable="true"
+                          data-toggable-active="false"
+                          data-toggable-on-path="https://betalist.com/startups/pensieve/follow"
+                          data-toggable-off-path="https://betalist.com/startups/pensieve/unfollow"
+                          href="#"
+                          ><div
+                            class="cuteButton__score"
+                            data-behavior="toggable-counter"
+                          ></div>
+                          <div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                      <div class="startupCard__meta__buttons__button">
+                        <a class="cuteButton" href="/startups/pensieve#comments"
+                          ><div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="
+                        startupCard__meta__makers startupCard__meta__makers--3
+                      "
+                    >
+                      <a
+                        class="startupCard__meta__makers__maker"
+                        style="
+                          background-image: url(&#39;https://betalist.imgix.net/defaults/user/avatar?ixlib=rails-4.2.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&#39;);
+                        "
+                        href="http://twitter.com/dontatarah"
+                      ></a>
+                      <a
+                        class="startupCard__meta__makers__maker"
+                        style="
+                          background-image: url(&#39;https://betalist.imgix.net/defaults/user/avatar?ixlib=rails-4.2.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&#39;);
+                        "
+                        href="http://twitter.com/bholagabbar"
+                      ></a>
+                      <a
+                        class="startupCard__meta__makers__maker"
+                        style="
+                          background-image: url(&#39;https://betalist.imgix.net/user/111599/avatar/661de943cb2807a2f5cdafb20cb30917.jpg?ixlib=rb-4.0.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&amp;s=05c52855b9c6419b64127988dfa6ded5&#39;);
+                        "
+                        href="/@trishysuri"
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="startupDeckHeader">
+              <strong>Yesterday</strong> December 22nd
+            </div>
+            <div class="startupDeck">
+              <div class="startupCard" id="startup-83148">
+                <a
+                  class="startupCard__visual"
+                  style="background-color: "
+                  href="/startups/reroas"
+                  ><img
+                    srcset="
+                      https://betalist.imgix.net/attachment/164786/image/5f5ddfbdeb80194581b8ff9524ac7b4a.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=4d8f6d64c94b5186e2ce4e5525131a9b 1x,
+                      https://betalist.imgix.net/attachment/164786/image/5f5ddfbdeb80194581b8ff9524ac7b4a.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=2&amp;s=15fd7c591a71b6090a07fb407d8ebe3a 2x,
+                      https://betalist.imgix.net/attachment/164786/image/5f5ddfbdeb80194581b8ff9524ac7b4a.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=3&amp;s=168e5535fcb6dfbb4787703579fe75c3 3x
+                    "
+                    class="startupCard__visual__image"
+                    src="https://betalist.imgix.net/attachment/164786/image/5f5ddfbdeb80194581b8ff9524ac7b4a.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=4d8f6d64c94b5186e2ce4e5525131a9b"
+                  />
+                </a>
+                <div class="startupCard__details">
+                  <div class="startupCard__details__text">
+                    <a
+                      class="startupCard__details__name"
+                      href="/startups/reroas"
+                      >Reroas </a
+                    ><a
+                      class="startupCard__details__pitch"
+                      href="/startups/reroas"
+                      >Retargeting Ads with AI audiences and scaling</a
+                    >
+                  </div>
+                  <div class="startupCard__meta">
+                    <div class="startupCard__meta__buttons">
+                      <div class="startupCard__meta__buttons__button">
+                        <a
+                          class="cuteButton cuteButton--upvote"
+                          data-behavior="toggable toggable-incrementable"
+                          data-toggable-incrementable="true"
+                          data-toggable-active="false"
+                          data-toggable-on-path="https://betalist.com/startups/reroas/follow"
+                          data-toggable-off-path="https://betalist.com/startups/reroas/unfollow"
+                          href="#"
+                          ><div
+                            class="cuteButton__score"
+                            data-behavior="toggable-counter"
+                          ></div>
+                          <div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                      <div class="startupCard__meta__buttons__button">
+                        <a class="cuteButton" href="/startups/reroas#comments"
+                          ><div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="
+                        startupCard__meta__makers startupCard__meta__makers--1
+                      "
+                    >
+                      <a
+                        class="startupCard__meta__makers__maker"
+                        style="
+                          background-image: url(&#39;https://betalist.imgix.net/user/118755/avatar/ee2553f6a31aa84aa1000589a36acb0b.png?ixlib=rb-4.0.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&amp;s=e0e1efa427cc42ebcabb9c3b3bee9089&#39;);
+                        "
+                        href="/@slowraar"
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="startupCard" id="startup-83143">
+                <a
+                  class="startupCard__visual"
+                  style="background-color: "
+                  href="/startups/bzaar"
+                  ><img
+                    srcset="
+                      https://betalist.imgix.net/attachment/164785/image/6636a6b30da2caf945e808722cc21e71.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=8a5ddf75cfebb2f24e77e2a01f48df8e 1x,
+                      https://betalist.imgix.net/attachment/164785/image/6636a6b30da2caf945e808722cc21e71.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=2&amp;s=0040d571fa982a28fed26055aaf2e45c 2x,
+                      https://betalist.imgix.net/attachment/164785/image/6636a6b30da2caf945e808722cc21e71.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=3&amp;s=4517a9d4f9c70f9cd1c88c0222234900 3x
+                    "
+                    class="startupCard__visual__image"
+                    src="https://betalist.imgix.net/attachment/164785/image/6636a6b30da2caf945e808722cc21e71.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=8a5ddf75cfebb2f24e77e2a01f48df8e"
+                  />
+                </a>
+                <div class="startupCard__details">
+                  <div class="startupCard__details__text">
+                    <a class="startupCard__details__name" href="/startups/bzaar"
+                      >Bzaar </a
+                    ><a
+                      class="startupCard__details__pitch"
+                      href="/startups/bzaar"
+                      >B2B Cross-border Marketplace</a
+                    >
+                  </div>
+                  <div class="startupCard__meta">
+                    <div class="startupCard__meta__buttons">
+                      <div class="startupCard__meta__buttons__button">
+                        <a
+                          class="cuteButton cuteButton--upvote"
+                          data-behavior="toggable toggable-incrementable"
+                          data-toggable-incrementable="true"
+                          data-toggable-active="false"
+                          data-toggable-on-path="https://betalist.com/startups/bzaar/follow"
+                          data-toggable-off-path="https://betalist.com/startups/bzaar/unfollow"
+                          href="#"
+                          ><div
+                            class="cuteButton__score"
+                            data-behavior="toggable-counter"
+                          ></div>
+                          <div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                      <div class="startupCard__meta__buttons__button">
+                        <a class="cuteButton" href="/startups/bzaar#comments"
+                          ><div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="
+                        startupCard__meta__makers startupCard__meta__makers--0
+                      "
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="startupCard" id="startup-83120">
+                <a
+                  class="startupCard__visual"
+                  style="background-color: "
+                  href="/startups/operance"
+                  ><img
+                    srcset="
+                      https://betalist.imgix.net/attachment/164782/image/d873d6acf6ff033f33a927d36a6fd83f.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=018895297b98f0e110fb0f0743f2d5ea 1x,
+                      https://betalist.imgix.net/attachment/164782/image/d873d6acf6ff033f33a927d36a6fd83f.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=2&amp;s=b2fa52d5e82ad9e6b1ca7d6712fbc026 2x,
+                      https://betalist.imgix.net/attachment/164782/image/d873d6acf6ff033f33a927d36a6fd83f.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=3&amp;s=5cdaca24b6e62117e2093863cb9efa9d 3x
+                    "
+                    class="startupCard__visual__image"
+                    src="https://betalist.imgix.net/attachment/164782/image/d873d6acf6ff033f33a927d36a6fd83f.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=018895297b98f0e110fb0f0743f2d5ea"
+                  />
+                </a>
+                <div class="startupCard__details">
+                  <div class="startupCard__details__text">
+                    <a
+                      class="startupCard__details__name"
+                      href="/startups/operance"
+                      >Operance </a
+                    ><a
+                      class="startupCard__details__pitch"
+                      href="/startups/operance"
+                      >A suite of tools to build your entire freelance
+                      business</a
+                    >
+                  </div>
+                  <div class="startupCard__meta">
+                    <div class="startupCard__meta__buttons">
+                      <div class="startupCard__meta__buttons__button">
+                        <a
+                          class="cuteButton cuteButton--upvote"
+                          data-behavior="toggable toggable-incrementable"
+                          data-toggable-incrementable="true"
+                          data-toggable-active="false"
+                          data-toggable-on-path="https://betalist.com/startups/operance/follow"
+                          data-toggable-off-path="https://betalist.com/startups/operance/unfollow"
+                          href="#"
+                          ><div
+                            class="cuteButton__score"
+                            data-behavior="toggable-counter"
+                          ></div>
+                          <div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                      <div class="startupCard__meta__buttons__button">
+                        <a class="cuteButton" href="/startups/operance#comments"
+                          ><div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="
+                        startupCard__meta__makers startupCard__meta__makers--1
+                      "
+                    >
+                      <a
+                        class="startupCard__meta__makers__maker"
+                        style="
+                          background-image: url(&#39;https://betalist.imgix.net/user/118656/avatar/68d613a39cdefa569962415492227d74.jpg?ixlib=rb-4.0.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&amp;s=104c3f20270a7b0877483d9e6034164a&#39;);
+                        "
+                        href="/@OperanceC"
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="startupCard" id="startup-80076">
+                <a
+                  class="startupCard__visual"
+                  style="background-color: "
+                  href="/startups/kariyo"
+                  ><img
+                    srcset="
+                      https://betalist.imgix.net/attachment/164784/image/360198721e0d059714bb1c3f250198d9.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=d6c120b245765c971418fb0085615efe 1x,
+                      https://betalist.imgix.net/attachment/164784/image/360198721e0d059714bb1c3f250198d9.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=2&amp;s=e08629937ebadda080ee079aa10679a0 2x,
+                      https://betalist.imgix.net/attachment/164784/image/360198721e0d059714bb1c3f250198d9.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=3&amp;s=098a3fa2d6081cd3997b66f88c9a89ab 3x
+                    "
+                    class="startupCard__visual__image"
+                    src="https://betalist.imgix.net/attachment/164784/image/360198721e0d059714bb1c3f250198d9.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=d6c120b245765c971418fb0085615efe"
+                  />
+                </a>
+                <div class="startupCard__details">
+                  <div class="startupCard__details__text">
+                    <a
+                      class="startupCard__details__name"
+                      href="/startups/kariyo"
+                      >Kariyo </a
+                    ><a
+                      class="startupCard__details__pitch"
+                      href="/startups/kariyo"
+                      >Deliver services to the comfort of your home</a
+                    >
+                  </div>
+                  <div class="startupCard__meta">
+                    <div class="startupCard__meta__buttons">
+                      <div class="startupCard__meta__buttons__button">
+                        <a
+                          class="cuteButton cuteButton--upvote"
+                          data-behavior="toggable toggable-incrementable"
+                          data-toggable-incrementable="true"
+                          data-toggable-active="false"
+                          data-toggable-on-path="https://betalist.com/startups/kariyo/follow"
+                          data-toggable-off-path="https://betalist.com/startups/kariyo/unfollow"
+                          href="#"
+                          ><div
+                            class="cuteButton__score"
+                            data-behavior="toggable-counter"
+                          ></div>
+                          <div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                      <div class="startupCard__meta__buttons__button">
+                        <a class="cuteButton" href="/startups/kariyo#comments"
+                          ><div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="
+                        startupCard__meta__makers startupCard__meta__makers--1
+                      "
+                    >
+                      <a
+                        class="startupCard__meta__makers__maker"
+                        style="
+                          background-image: url(&#39;https://betalist.imgix.net/defaults/user/avatar?ixlib=rails-4.2.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&#39;);
+                        "
+                        href="http://twitter.com/colum"
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="startupCard" id="startup-78163">
+                <a
+                  class="startupCard__visual"
+                  style="background-color: "
+                  href="/startups/pensieve"
+                  ><img
+                    srcset="
+                      https://betalist.imgix.net/attachment/164783/image/3f61977d2438e1b91d4a0241583e1286.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=51829566cd6301de6ab4dd27ec83e45f 1x,
+                      https://betalist.imgix.net/attachment/164783/image/3f61977d2438e1b91d4a0241583e1286.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=2&amp;s=ca83cccf856090a885dc9fe33c8ab3fa 2x,
+                      https://betalist.imgix.net/attachment/164783/image/3f61977d2438e1b91d4a0241583e1286.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=3&amp;s=a6f4d3603d8beba310bdd10f7edf7923 3x
+                    "
+                    class="startupCard__visual__image"
+                    src="https://betalist.imgix.net/attachment/164783/image/3f61977d2438e1b91d4a0241583e1286.jpeg?ixlib=rb-4.0.0&amp;w=480&amp;h=360&amp;fit=min&amp;auto=format&amp;cs=strip&amp;dpr=1&amp;s=51829566cd6301de6ab4dd27ec83e45f"
+                  />
+                </a>
+                <div class="startupCard__details">
+                  <div class="startupCard__details__text">
+                    <a
+                      class="startupCard__details__name"
+                      href="/startups/pensieve"
+                      >Pensieve </a
+                    ><a
+                      class="startupCard__details__pitch"
+                      href="/startups/pensieve"
+                      >A powerful research repository to help R&amp;D teams
+                      better collaborate</a
+                    >
+                  </div>
+                  <div class="startupCard__meta">
+                    <div class="startupCard__meta__buttons">
+                      <div class="startupCard__meta__buttons__button">
+                        <a
+                          class="cuteButton cuteButton--upvote"
+                          data-behavior="toggable toggable-incrementable"
+                          data-toggable-incrementable="true"
+                          data-toggable-active="false"
+                          data-toggable-on-path="https://betalist.com/startups/pensieve/follow"
+                          data-toggable-off-path="https://betalist.com/startups/pensieve/unfollow"
+                          href="#"
+                          ><div
+                            class="cuteButton__score"
+                            data-behavior="toggable-counter"
+                          ></div>
+                          <div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                      <div class="startupCard__meta__buttons__button">
+                        <a class="cuteButton" href="/startups/pensieve#comments"
+                          ><div class="cuteButton__icon">&nbsp;</div>
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="
+                        startupCard__meta__makers startupCard__meta__makers--3
+                      "
+                    >
+                      <a
+                        class="startupCard__meta__makers__maker"
+                        style="
+                          background-image: url(&#39;https://betalist.imgix.net/defaults/user/avatar?ixlib=rails-4.2.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&#39;);
+                        "
+                        href="http://twitter.com/dontatarah"
+                      ></a>
+                      <a
+                        class="startupCard__meta__makers__maker"
+                        style="
+                          background-image: url(&#39;https://betalist.imgix.net/defaults/user/avatar?ixlib=rails-4.2.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&#39;);
+                        "
+                        href="http://twitter.com/bholagabbar"
+                      ></a>
+                      <a
+                        class="startupCard__meta__makers__maker"
+                        style="
+                          background-image: url(&#39;https://betalist.imgix.net/user/111599/avatar/661de943cb2807a2f5cdafb20cb30917.jpg?ixlib=rb-4.0.0&amp;h=100&amp;w=100&amp;fit=crop&amp;auto=format&amp;s=05c52855b9c6419b64127988dfa6ded5&#39;);
+                        "
+                        href="/@trishysuri"
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+
+
+          </div>
+        </div>
+      </section>
+    </div>
+
+    
+
+
+    <div
+      class="modal--signIn"
+      data-behavior="sign-in-modal"
+      style="display: none"
+    >
+      <div class="modal--signIn__header">
+        <div class="betaburger">
+          <div class="betaburger__ingredients"></div>
+        </div>
+        <h1 class="modal--signIn__header__title">Sign in to BetaList</h1>
+      </div>
+      <p>
+        Connect with makers and early adopters exchanging product feedback and
+        ideas.
+      </p>
+      <p>Please use your personal Twitter account.</p>
+      <a
+        data-behavior="sign-in-redirect-url"
+        class="
+          button
+          button--fullWidth
+          button--noTextTransform
+          button--withIcon
+          button--twitter
+        "
+        href="/users/auth/twitter"
+        ><div class="button__icon button__icon--twitter"></div>
+        Sign in with Twitter
+      </a>
+      <p class="modal__subtle">We won't post without asking</p>
+    </div>
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script src="//platform.twitter.com/widgets.js"></script>
+  </body>
+</html>
