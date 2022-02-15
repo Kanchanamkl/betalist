@@ -1,2 +1,2 @@
 # betalist
-WD course work
+WD course work!
